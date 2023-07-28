@@ -1,5 +1,9 @@
 import 'package:bookly/core/assets_data.dart';
+import 'package:bookly/features/home_view/presentaion/views/home_view_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../../../../core/constants.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -16,15 +20,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-
     slidingText();
+    navigateToHome();
   }
+
+
   @override
   void dispose() {
     super.dispose();
     animationController.dispose();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +52,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       ],
     );
   }
+
   void slidingText() {
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
@@ -55,6 +61,16 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Tween<Offset>(begin: const Offset(0, 1.5), end: Offset.zero)
             .animate(animationController);
     animationController.forward();
+  }
+
+  void navigateToHome() {
+    Future.delayed(
+      const Duration(seconds: 2),
+          () {
+        Get.to(() => const HomeView(),
+            transition: Transition.fade, duration: kTransitionDuration);
+      },
+    );
   }
 
 }
