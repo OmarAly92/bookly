@@ -1,9 +1,10 @@
 import 'package:bookly/core/assets_data.dart';
+import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_app_bar.dart';
-import 'custom_book_data_item.dart';
+import 'featured_books_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -23,24 +24,6 @@ class HomeViewBody extends StatelessWidget {
   }
 }
 
-class FeaturedBooksListView extends StatelessWidget {
-  const FeaturedBooksListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 180.h,
-      child: ListView.builder(
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-        return const CustomBookDataItem();
-      },),
-    );
-  }
-}
-
-
 class CustomWidget1 extends StatelessWidget {
   const CustomWidget1({super.key});
 
@@ -51,9 +34,9 @@ class CustomWidget1 extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
+           Text(
             'Best Seller',
-            style: TextStyle(fontSize: 20),
+            style: Styles.titleMedium,
           ),
           const SizedBox(height: 20),
           Row(
@@ -72,7 +55,7 @@ class CustomWidget1 extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
+                    SizedBox(
                       width: 200,
                       child: const Text(
                         'Harry Potter and the Goblet of Fire',

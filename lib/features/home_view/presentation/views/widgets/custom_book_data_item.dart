@@ -19,7 +19,7 @@ class CustomBookDataItem extends StatelessWidget {
             color: Colors.red,
             borderRadius: BorderRadius.circular(15),
             image: const DecorationImage(
-              image: AssetImage(AssetsData.testImage),
+              image: NetworkImage(AssetsData.testNetworkImage),
               fit: BoxFit.cover,
             ),
           ),
