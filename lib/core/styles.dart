@@ -11,12 +11,11 @@ abstract class Styles {
   static TextStyle textStyle20 = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: kGtSectraFine,
   );
   static TextStyle textStyle30 = TextStyle(
     fontSize: 30.sp,
     fontWeight: FontWeight.normal,
-    fontFamily: kGtSectraFine,
+    fontFamily: kFontGtSectraFine,
   );
   static TextStyle textStyle14 = TextStyle(
     fontSize: 14.sp,
