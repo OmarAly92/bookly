@@ -1,7 +1,6 @@
 import 'package:bookly/core/assets_data.dart';
 import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'custom_app_bar.dart';
 import 'featured_books_list_view.dart';
