@@ -1,9 +1,9 @@
 import 'package:bookly/core/assets_data.dart';
-import 'package:bookly/features/home_view/presentaion/views/home_view_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../../core/constants.dart';
+import '../../../../home_view/presentation/views/home_view_screen.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    slidingText();
+    initSlidingAnimation();
     navigateToHome();
   }
 
@@ -53,7 +53,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 
-  void slidingText() {
+  void initSlidingAnimation() {
     animationController =
         AnimationController(vsync: this, duration: const Duration(seconds: 1));
 
