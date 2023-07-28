@@ -4,6 +4,8 @@ import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'book_rating.dart';
+
 class BestSellerListViewItem extends StatelessWidget {
   const BestSellerListViewItem({super.key});
 
@@ -54,10 +56,12 @@ class BestSellerListViewItem extends StatelessWidget {
                       const SizedBox(height: 3),
                       Text(
                         'J.K Rawling',
-                        style: Styles.textStyle14.copyWith(color: Colors.grey),
+                        style: Styles.textStyle14
+                            .copyWith(color: const Color(0xff707070)),
                       ),
                       const SizedBox(height: 3),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
                             '19.99 E',
@@ -65,6 +69,7 @@ class BestSellerListViewItem extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          const BookRating(),
                         ],
                       )
                     ],
