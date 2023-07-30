@@ -22,8 +22,6 @@ class CustomAppBar extends StatelessWidget {
         CupertinoIcons.search,
         size: 30,
       ),
-      horizontal: 20,
-      vertical: 0,
     );
   }
 }
