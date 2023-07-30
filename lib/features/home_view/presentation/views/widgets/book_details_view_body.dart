@@ -17,8 +17,11 @@ class BookDetailsViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       child: CustomScrollView(
+
         slivers: [
-          SliverToBoxAdapter(
+
+          SliverFillRemaining(
+            hasScrollBody: false,
             child: Column(
               children: [
                 const CustomBookDetailsAppBar(),
@@ -53,8 +56,10 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 37,
                 ),
                 const BoxAction(),
-                const SizedBox(
-                  height: 50,
+                const Expanded(
+                  child: SizedBox(
+                    height: 50,
+                  ),
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
@@ -73,7 +78,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
