@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'best_seller_list_view_item.dart';
 import 'best_seller_sliver_list.dart';
 import 'best_seller_title.dart';
 import 'custom_app_bar.dart';
@@ -32,19 +31,3 @@ class HomeViewBody extends StatelessWidget {
   }
 }
 
-class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      scrollDirection: Axis.vertical,
-      padding: EdgeInsets.zero,
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return const BestSellerListViewItem();
-      },
-    );
-  }
-}
