@@ -22,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                 CustomAppBar(),
                 FeaturedBooksListView(),
                 BestSellerTitle(),
-              ],
+               ],
             ),
           ),
           BestSellerSliverList(),
@@ -31,8 +31,6 @@ class HomeViewBody extends StatelessWidget {
     );
   }
 }
-
-
 
 class BestSellerListView extends StatelessWidget {
   const BestSellerListView({super.key});
