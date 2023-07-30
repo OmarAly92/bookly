@@ -55,7 +55,7 @@ class BestSellerListViewItem extends StatelessWidget {
                     Text(
                       'J.K Rawling',
                       style: Styles.textStyle14
-                          .copyWith(color: const Color(0xff707070)),
+                          .copyWith(color: kGreySubtitle),
                     ),
                     const SizedBox(height: 3),
                     Row(
