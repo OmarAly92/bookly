@@ -67,7 +67,7 @@ class BestSellerListViewItem extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        const BookRating(),
+                        const BookRating(mainAxisAlignment: MainAxisAlignment.start),
                       ],
                     )
                   ],
