@@ -1,5 +1,5 @@
 import 'package:bookly/core/assets_data.dart';
-import 'package:bookly/core/custom_app_bar.dart';
+import 'package:bookly/core/widgets/custom_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
