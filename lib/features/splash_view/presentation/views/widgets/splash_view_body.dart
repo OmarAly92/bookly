@@ -36,16 +36,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
       children: [
         Image.asset(AssetsData.logoImage, filterQuality: FilterQuality.high),
         AnimatedBuilder(
-            animation: slidingAnimation,
-            builder: (context, child) {
-              return SlideTransition(
-                position: slidingAnimation,
-                child: const Text(
-                  'Read Free Books',
-                  textAlign: TextAlign.center,
-                ),
-              );
-            })
+          animation: slidingAnimation,
+          builder: (context, child) {
+            return SlideTransition(
+              position: slidingAnimation,
+              child: const Text(
+                'Read Free Books',
+                textAlign: TextAlign.center,
+              ),
+            );
+          },
+        ),
       ],
     );
   }
@@ -64,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(seconds: 2),
       () {
-        GoRouter.of(context).push(AppRoutes.homeView);
+        GoRouter.of(context).pushReplacement(AppRoutes.homeView);
       },
     );
   }
