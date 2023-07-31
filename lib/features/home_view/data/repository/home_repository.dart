@@ -31,7 +31,14 @@ class HomeRepository implements BaseHomeRepository {
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+    try {
+      var data = await homeViewApiRequest.getBooksData(endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
+      return Right(data);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
   }
 }
