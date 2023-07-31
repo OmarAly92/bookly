@@ -11,7 +11,8 @@ class BookModel extends Equatable {
   final String description;
   final List<Map<String, dynamic>> industryIdentifiers;
   final Map<String, dynamic> readingModes;
-  final int pageCount;
+
+  // final int pageCount;
   final String printType;
   final List<String> categories;
   final int averageRating;
@@ -19,6 +20,7 @@ class BookModel extends Equatable {
   final String maturityRating;
   final Map<String, dynamic> imageLinks;
   final String language;
+  final String previewLink;
   final Map<String, dynamic> saleInfo;
   final Map<String, dynamic> accessInfo;
   final Map<String, dynamic> searchInfo;
@@ -34,7 +36,7 @@ class BookModel extends Equatable {
     required this.description,
     required this.industryIdentifiers,
     required this.readingModes,
-    required this.pageCount,
+    // required this.pageCount,
     required this.printType,
     required this.categories,
     required this.averageRating,
@@ -42,6 +44,7 @@ class BookModel extends Equatable {
     required this.maturityRating,
     required this.imageLinks,
     required this.language,
+    required this.previewLink,
     required this.saleInfo,
     required this.accessInfo,
     required this.searchInfo,
@@ -58,7 +61,7 @@ class BookModel extends Equatable {
         description: json['description'],
         industryIdentifiers: json['industryIdentifiers'],
         readingModes: json['readingModes'],
-        pageCount: json['pageCount'],
+        // pageCount: json['pageCount'],
         printType: json['printType'],
         categories: json['categories'],
         averageRating: json['averageRating'],
@@ -69,8 +72,10 @@ class BookModel extends Equatable {
         saleInfo: json['saleInfo'],
         accessInfo: json['accessInfo'],
         searchInfo: json['searchInfo'],
+        previewLink: json['previewLink'],
       );
-   saleInfoToDart(Map<String,dynamic> saleInfo){
+
+  saleInfoToDart(Map<String, dynamic> saleInfo) {
     return this.saleInfo;
   }
 
@@ -86,7 +91,6 @@ class BookModel extends Equatable {
         description,
         industryIdentifiers,
         readingModes,
-        pageCount,
         printType,
         categories,
         averageRating,
@@ -94,6 +98,7 @@ class BookModel extends Equatable {
         maturityRating,
         imageLinks,
         language,
+        previewLink,
         saleInfo,
         accessInfo,
         searchInfo,
