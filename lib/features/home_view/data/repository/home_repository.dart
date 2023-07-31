@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 abstract class BaseHomeRepository {
-  Future<Either<Failure, List<BookModel>>> fetchNewBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
 
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
 }
@@ -16,7 +16,7 @@ class HomeRepository implements BaseHomeRepository {
   HomeRepository(this.homeViewApiRequest);
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await homeViewApiRequest.getBooksData(
           endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:Programming');

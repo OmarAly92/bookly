@@ -15,12 +15,12 @@ class FeatureBooksLoading extends FeatureBooksState {
 }
 
 class FeatureBooksSuccess extends FeatureBooksState {
-  final List<BookModel> bookList;
+  final List<BookModel> books;
 
-  const FeatureBooksSuccess(this.bookList);
+  const FeatureBooksSuccess(this.books);
 
   @override
-  List<Object> get props => [bookList];
+  List<Object> get props => [books];
 }
 
 class FeatureBooksFailure extends FeatureBooksState {
