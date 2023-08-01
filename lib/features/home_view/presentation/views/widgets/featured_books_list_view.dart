@@ -37,7 +37,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
                 var stateItem =
                     state.books[index].volumeInfo.imageLinks!.thumbnail;
 
-                return CustomBookDataItem(bookImage: stateItem);
+                return CustomBookDataItem(imageUrl: stateItem);
               },
             ),
           );
