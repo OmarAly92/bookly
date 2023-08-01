@@ -20,7 +20,7 @@ class HomeRepository implements BaseHomeRepository {
     try {
       var data = await homeViewApiRequest.getBooksData(
           endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
-      return Right(data);
+      return Right(data );
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
@@ -28,6 +28,7 @@ class HomeRepository implements BaseHomeRepository {
       return Left(ServerFailure(e.toString()));
     }
   }
+
 
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {

@@ -27,6 +27,7 @@ class CustomButton extends StatelessWidget {
             borderRadius: borderRadius,
           ),
           backgroundColor: backgroundColor,
+
         ),
         child: Text(
           text,
