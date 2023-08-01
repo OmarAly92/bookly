@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 
-import '../features/home_view/presentation/views/book_details_view.dart';
-import '../features/home_view/presentation/views/home_view_screen.dart';
-import '../features/search_view/presentation/view/search_view.dart';
-import '../features/splash_view/presentation/views/splash_view_screen.dart';
+import '../../features/home_view/presentation/views/book_details_view.dart';
+import '../../features/home_view/presentation/views/home_view_screen.dart';
+import '../../features/search_view/presentation/view/search_view.dart';
+import '../../features/splash_view/presentation/views/splash_view_screen.dart';
 
 abstract class AppRoutes {
   static const String homeView = '/homeView';

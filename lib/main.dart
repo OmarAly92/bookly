@@ -1,11 +1,11 @@
-import 'package:bookly/core/app_routes.dart';
-import 'package:bookly/core/constants.dart';
+import 'package:bookly/core/util/app_routes.dart';
 import 'package:bookly/features/home_view/presentation/state_management/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'core/util/constants.dart';
 import 'core/util/service_locator.dart';
 import 'features/home_view/presentation/state_management/featured_books_cubit/featured_books_cubit.dart';
 
@@ -22,7 +22,7 @@ class BooklyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => FeaturedBooksCubit(sl.get())..fetchFeaturedBooks()),
-        BlocProvider(create: (context) => NewestBooksCubit(sl.get())),
+        BlocProvider(create: (context) => NewestBooksCubit(sl.get())..fetchNewestBooks()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 690),

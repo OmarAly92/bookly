@@ -1,5 +1,5 @@
-import 'package:bookly/core/app_routes.dart';
-import 'package:bookly/core/assets_data.dart';
+import 'package:bookly/core/util/app_routes.dart';
+import 'package:bookly/core/util/assets_data.dart';
 import 'package:bookly/core/widgets/custom_app_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

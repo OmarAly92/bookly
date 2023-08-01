@@ -1,8 +1,8 @@
-import 'package:bookly/core/constants.dart';
-import 'package:bookly/core/styles.dart';
+import 'package:bookly/core/util/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/util/styles.dart';
 import 'book_rating.dart';
 import 'box_action.dart';
 import 'custom_book_data_item.dart';
@@ -16,7 +16,9 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 80.w),
-          child: const CustomBookDataItem(imageUrl: '',),
+          child: const CustomBookDataItem(
+            imageUrl: '',
+          ),
         ),
         const SizedBox(
           height: 23,
@@ -40,6 +42,8 @@ class BookDetailsSection extends StatelessWidget {
         ),
         const BookRating(
           mainAxisAlignment: MainAxisAlignment.center,
+          averageRating: 0,
+          ratingCount: 0,
         ),
         const SizedBox(
           height: 37,
