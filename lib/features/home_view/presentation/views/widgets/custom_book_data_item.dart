@@ -1,28 +1,29 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../../../core/widgets/error_image_widget.dart';
 
 class CustomBookDataItem extends StatelessWidget {
   const CustomBookDataItem({
-    super.key, required this.bookImage,
+    super.key,
+    required this.imageUrl,
   });
- final String bookImage;
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 8.w),
+      padding: EdgeInsets.symmetric(horizontal: 8.w),
       child: AspectRatio(
-        aspectRatio: 4.1/8,
-        child: Container(
-          margin: EdgeInsets.symmetric(vertical: 20.h),
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(15),
-            image:  DecorationImage(
-              image: NetworkImage(bookImage),
-              fit: BoxFit.cover,
-            ),
+        aspectRatio: 5.3 / 8,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(16),
+          child: CachedNetworkImage(
+            imageUrl: 'imageUrl',
+            fit: BoxFit.fill,
+            errorWidget: (context, url, error) => const ErrorImageWidget(),
           ),
         ),
       ),
