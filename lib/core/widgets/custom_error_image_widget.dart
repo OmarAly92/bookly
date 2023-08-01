@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ErrorImageWidget extends StatelessWidget {
-  const ErrorImageWidget({
+class CustomErrorImageWidget extends StatelessWidget {
+  const CustomErrorImageWidget({
     super.key,
   });
 

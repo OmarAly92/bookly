@@ -1,4 +1,4 @@
-import 'package:bookly/core/widgets/custom_error_widget.dart';
+import 'package:bookly/core/widgets/custom_failure_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -42,7 +42,7 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
             ),
           );
         } else if (state is FeaturedBooksFailure) {
-          return CustomErrorWidget(errorMessage: state.failureMessage);
+          return CustomFailureWidget(failureMessage: state.failureMessage);
         } else {
           return Padding(
             padding: EdgeInsets.symmetric(vertical: 75.h),

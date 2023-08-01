@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'constants.dart';
 
+
 abstract class Styles {
   static TextStyle textStyle18 = TextStyle(
     fontSize: 18.sp,

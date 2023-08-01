@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../../../core/widgets/error_image_widget.dart';
+import '../../../../../core/widgets/custom_error_image_widget.dart';
 
 class CustomBookDataItem extends StatelessWidget {
   const CustomBookDataItem({
@@ -21,9 +21,9 @@ class CustomBookDataItem extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16),
           child: CachedNetworkImage(
-            imageUrl: 'imageUrl',
+            imageUrl: imageUrl,
             fit: BoxFit.fill,
-            errorWidget: (context, url, error) => const ErrorImageWidget(),
+            errorWidget: (context, url, error) => const CustomErrorImageWidget(),
           ),
         ),
       ),

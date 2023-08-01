@@ -1,5 +1,6 @@
-import 'package:bookly/core/styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/util/styles.dart';
 
 class BestSellerTitle extends StatelessWidget {
   const BestSellerTitle({
@@ -13,7 +14,7 @@ class BestSellerTitle extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 15, right: 20, left: 20),
           child: Text(
-            'Best Seller',
+            'Newest Books',
             style: Styles.textStyle18,
           ),
         ),
