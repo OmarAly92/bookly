@@ -4,22 +4,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../data/models/book_model.dart';
 import '../../../data/repository/home_repository.dart';
 
-part 'feature_books_state.dart';
+part '../../../presentation/state_management/featured_books_cubit/featured_books_state.dart';
 
-class FeatureBooksCubit extends Cubit<FeatureBooksState> {
-  FeatureBooksCubit(this.homeRepository) : super(FeatureBooksInitial());
+class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
+  FeaturedBooksCubit(this.homeRepository) : super(FeaturedBooksInitial());
 
   final BaseHomeRepository homeRepository;
 
   Future<void> fetchFeaturedBooks() async {
-    emit(FeatureBooksLoading());
+    emit(FeaturedBooksLoading());
+
     var result = await homeRepository.fetchFeaturedBooks();
     result.fold(
       (failure) {
-        emit(FeatureBooksFailure(failure.errorMessage));
+        emit(FeaturedBooksFailure(failure.errorMessage));
       },
       (books) {
-        emit(FeatureBooksSuccess(books));
+        emit(FeaturedBooksSuccess(books));
       },
     );
   }

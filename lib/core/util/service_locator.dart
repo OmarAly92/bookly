@@ -7,6 +7,9 @@ import '../../features/home_view/data/repository/home_repository.dart';
 final sl = GetIt.instance;
 
 void setupServiceLocator() {
-  sl.registerLazySingleton<HomeViewApiRequest>(() => HomeViewApiRequest(Dio()));
-  sl.registerLazySingleton<HomeRepository>(() => HomeRepository(sl.get()));
+  // sl.registerLazySingleton<HomeViewApiRequest>(() => HomeViewApiRequest(Dio()));
+  // sl.registerLazySingleton<BaseHomeRepository>(() => HomeRepository(sl.get()));
+
+  sl.registerSingleton<HomeViewApiRequest>(HomeViewApiRequest(Dio()));
+  sl.registerSingleton<BaseHomeRepository>(HomeRepository(sl.get()));
 }
