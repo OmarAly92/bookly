@@ -17,7 +17,6 @@ class BookListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: SizedBox(
@@ -58,6 +57,8 @@ class BookListViewItem extends StatelessWidget {
                     Text(
                       bookItem.volumeInfo.authors!.join(' / '),
                       style: Styles.textStyle14.copyWith(color: kGreySubtitle),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 1,
                     ),
                     const SizedBox(height: 3),
                     Row(
