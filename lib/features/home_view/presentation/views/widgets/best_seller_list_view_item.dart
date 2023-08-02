@@ -29,7 +29,7 @@ class BookListViewItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AspectRatio(
-                aspectRatio: 2 / 3,
+                aspectRatio: 5.3 / 8,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: CachedNetworkImage(
