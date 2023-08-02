@@ -8,6 +8,9 @@ abstract class BaseHomeRepository {
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
 
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
+
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category});
 }
 
 class HomeRepository implements BaseHomeRepository {
@@ -19,8 +22,9 @@ class HomeRepository implements BaseHomeRepository {
   Future<Either<Failure, List<BookModel>>> fetchNewestBooks() async {
     try {
       var data = await homeViewApiRequest.getBooksData(
-          endPoint: 'volumes?Filtering=free-ebooks&Sorting=newest &q=subject:Programming');
-      return Right(data );
+          endPoint:
+              'volumes?Filtering=free-ebooks&Sorting=newest&q=computerScience');
+      return Right(data);
     } catch (e) {
       if (e is DioException) {
         return Left(ServerFailure.fromDioError(e));
@@ -29,11 +33,25 @@ class HomeRepository implements BaseHomeRepository {
     }
   }
 
-
   @override
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
-      var data = await homeViewApiRequest.getBooksData(endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
+      var data = await homeViewApiRequest.getBooksData(
+          endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming');
+      return Right(data);
+    } catch (e) {
+      if (e is DioException) {
+        return Left(ServerFailure.fromDioError(e));
+      }
+      return Left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks({required String category}) async {
+    try {
+      var data = await homeViewApiRequest.getBooksData(
+          endPoint: 'volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:Programming');
       return Right(data);
     } catch (e) {
       if (e is DioException) {
