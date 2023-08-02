@@ -25,7 +25,7 @@ class BestSellerSliverList extends StatelessWidget {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
-                return BookListViewItem(bookItem: state.books[index]);
+                return BookListViewItem(bookData: state.books[index]);
               },
             );
           } else if (state is NewestBooksFailure) {

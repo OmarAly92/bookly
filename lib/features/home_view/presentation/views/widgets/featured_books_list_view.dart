@@ -34,10 +34,9 @@ class _FeaturedBooksListViewState extends State<FeaturedBooksListView> {
               itemCount: state.books.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
-                var stateItem =
-                    state.books[index].volumeInfo.imageLinks!.thumbnail;
 
-                return CustomBookDataItem(imageUrl: stateItem);
+
+                return CustomBookDataItem( bookData: state.books[index]);
               },
             ),
           );
