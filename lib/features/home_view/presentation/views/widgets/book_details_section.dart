@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/util/styles.dart';
-import 'book_rating.dart';
+import '../../../data/models/book_model.dart';
 import 'box_action.dart';
 import 'custom_book_data_item.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.bookData});
+
+  final BookModel bookData;
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +18,25 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 80.w),
-          child: const CustomBookDataItem(
-            imageUrl: '',
+          child: CustomBookDataItem(
+            bookData: bookData,
           ),
         ),
         const SizedBox(
           height: 23,
         ),
         Text(
-          'The Jungle Book',
+          bookData.volumeInfo.title!,
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
         ),
         Text(
-          'Rudyard Kipling',
+          bookData.volumeInfo.authors!.join(' / '),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: Styles.textStyle18.copyWith(
             color: kGreySubtitle,
             fontStyle: FontStyle.italic,
@@ -40,15 +45,15 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-          averageRating: 0,
-          ratingCount: 0,
-        ),
+        // const BookRating(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   averageRating: 0,
+        //   ratingCount: 0,
+        // ),
         const SizedBox(
           height: 37,
         ),
-        const BoxAction(),
+         BoxAction(bookData:bookData ),
       ],
     );
   }

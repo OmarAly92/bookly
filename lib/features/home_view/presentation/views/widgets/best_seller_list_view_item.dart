@@ -8,12 +8,11 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../../core/util/constants.dart';
 import '../../../../../core/util/styles.dart';
-import 'book_rating.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key, required this.bookItem});
+  const BookListViewItem({super.key, required this.bookData});
 
-  final BookModel bookItem;
+  final BookModel bookData;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,8 @@ class BookListViewItem extends StatelessWidget {
         height: 130,
         child: GestureDetector(
           onTap: () {
-            GoRouter.of(context).push(AppRoutes.bookDetailsView);
+            GoRouter.of(context)
+                .push(AppRoutes.bookDetailsView, extra: bookData);
           },
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class BookListViewItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: CachedNetworkImage(
-                    imageUrl: bookItem.volumeInfo.imageLinks!.thumbnail,
+                    imageUrl: bookData.volumeInfo.imageLinks!.thumbnail,
                     fit: BoxFit.fill,
                     errorWidget: (context, url, error) =>
                         const CustomErrorImageWidget(),
@@ -47,7 +47,7 @@ class BookListViewItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      bookItem.volumeInfo.title!,
+                      bookData.volumeInfo.title!,
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kFontGtSectraFine),
                       overflow: TextOverflow.ellipsis,
@@ -55,26 +55,28 @@ class BookListViewItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 3),
                     Text(
-                      bookItem.volumeInfo.authors!.join(' / '),
+                      bookData.volumeInfo.authors!.join(' / '),
                       style: Styles.textStyle14.copyWith(color: kGreySubtitle),
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
-                    const SizedBox(height: 3),
+                    const SizedBox(height: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Free',
-                          style: Styles.textStyle20.copyWith(
+                          '${bookData.saleInfo!.listPrice?.amount ?? 'Price in Free Preview'} ${bookData.saleInfo!.listPrice?.currencyCode?? ''}',
+                          style:bookData.saleInfo!.listPrice?.amount != null? Styles.textStyle20.copyWith(
                             fontWeight: FontWeight.bold,
-                          ),
+                          ):Styles.textStyle16.copyWith(
+                            fontWeight: FontWeight.bold,
+                          )
                         ),
-                        BookRating(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          averageRating: bookItem.volumeInfo.averageRating ?? 0,
-                          ratingCount: bookItem.volumeInfo.ratingsCount ?? 0,
-                        ),
+                        // BookRating(
+                        //   mainAxisAlignment: MainAxisAlignment.start,
+                        //   averageRating: bookItem.volumeInfo.averageRating ?? 0,
+                        //   ratingCount: bookItem.volumeInfo.ratingsCount ?? 0,
+                        // ),
                       ],
                     )
                   ],

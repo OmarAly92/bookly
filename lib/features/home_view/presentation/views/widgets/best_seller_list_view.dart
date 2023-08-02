@@ -16,7 +16,7 @@ class BestSellerListView extends StatelessWidget {
       itemBuilder: (context, index) {
         List<BookModel>test = [];
 
-        return  BookListViewItem(bookItem: test[0],);
+        return  BookListViewItem(bookData: test[0],);
       },
     );
   }
