@@ -2,6 +2,7 @@ import 'package:bookly/core/util/functions/launch_url.dart';
 import 'package:bookly/core/widgets/custom_button.dart';
 import 'package:bookly/features/home_view/data/models/book_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BoxAction extends StatelessWidget {
@@ -36,7 +37,7 @@ class BoxAction extends StatelessWidget {
                       bottomRight: Radius.circular(16),
                       topRight: Radius.circular(16),
                     ),
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     onPressed: () {
                       // bookData.accessInfo!.webReaderLink!
                       launchCustomUrl(
@@ -54,7 +55,7 @@ class BoxAction extends StatelessWidget {
                     texColor: Colors.white,
                     text: getText(bookData),
                     borderRadius: BorderRadius.circular(16),
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     onPressed: () async {
                       // bookData.accessInfo!.webReaderLink!
                       Uri url = Uri.parse(bookData.accessInfo!.webReaderLink!);

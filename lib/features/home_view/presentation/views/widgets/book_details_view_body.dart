@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../data/models/book_model.dart';
 import 'book_details_section.dart';
@@ -22,9 +23,9 @@ class BookDetailsViewBody extends StatelessWidget {
               children: [
                 const CustomBookDetailsAppBar(),
                 BookDetailsSection(bookData: books),
-                const Expanded(
+                 Expanded(
                   child: SizedBox(
-                    height: 50,
+                    height: 20.h,
                   ),
                 ),
                 const SimilarBooksSection()

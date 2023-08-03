@@ -19,7 +19,7 @@ class CustomLoadingNewestBooksShimmer extends StatelessWidget {
             child:   Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: SizedBox(
-                height: 130,
+                height: 108.h,
                 child: GestureDetector(
                   onTap: () {
                     // You can handle the onTap event for shimmer as well, if needed.
@@ -36,7 +36,7 @@ class CustomLoadingNewestBooksShimmer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 30),
+                       SizedBox(width: 25.w),
                       SizedBox(
                         width: 200.w,
                         child: Column(
@@ -47,13 +47,13 @@ class CustomLoadingNewestBooksShimmer extends StatelessWidget {
                               height: 16,
                               color: Colors.white, // Shimmer effect will be applied to this container
                             ),
-                            const SizedBox(height: 3),
+                             SizedBox(height: 3.h),
                             Container(
                               width: double.infinity,
                               height: 14,
                               color: Colors.white, // Shimmer effect will be applied to this container
                             ),
-                            const SizedBox(height: 5),
+                             SizedBox(height: 5.h),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [

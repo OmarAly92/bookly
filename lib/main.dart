@@ -33,6 +33,8 @@ class BooklyApp extends StatelessWidget {
             routerConfig: AppRoutes.router,
             debugShowCheckedModeBanner: false,
             theme: ThemeData.dark().copyWith(
+                // OpenUpwardsPageTransitionsBuilder
+              pageTransitionsTheme: const PageTransitionsTheme(builders: {TargetPlatform.android: OpenUpwardsPageTransitionsBuilder()}),
               scaffoldBackgroundColor: kBackGroundColor,
               textTheme: GoogleFonts.montserratTextTheme(
                 ThemeData.dark().textTheme,

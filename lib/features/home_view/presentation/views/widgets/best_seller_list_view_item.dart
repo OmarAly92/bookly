@@ -19,7 +19,7 @@ class BookListViewItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: SizedBox(
-        height: 130,
+        height: 108.h,
         child: GestureDetector(
           onTap: () {
             GoRouter.of(context)
@@ -40,7 +40,7 @@ class BookListViewItem extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 30),
+               SizedBox(width: 25.w),
               SizedBox(
                 width: 200.w,
                 child: Column(
@@ -53,14 +53,14 @@ class BookListViewItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
                     ),
-                    const SizedBox(height: 3),
+                     SizedBox(height: 3.h),
                     Text(
                       bookData.volumeInfo.authors!.join(' / '),
                       style: Styles.textStyle14.copyWith(color: kGreySubtitle),
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
                     ),
-                    const SizedBox(height: 5),
+                     SizedBox(height: 5.h),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
