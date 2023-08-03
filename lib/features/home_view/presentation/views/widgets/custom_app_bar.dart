@@ -7,9 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
-    super.key,
-  });
+  const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +21,13 @@ class CustomAppBar extends StatelessWidget {
       ),
       actionWidget: IconButton(
         onPressed: () {
-          GoRouter.of(context).push(AppRoutes.searchView);
+          GoRouter.of(context).push(
+            AppRoutes.searchView,
+          );
         },
-        icon: const Icon(
+        icon:  Icon(
           CupertinoIcons.search,
-          size: 28,
+          size: 27.r,
         ),
       ),
     );

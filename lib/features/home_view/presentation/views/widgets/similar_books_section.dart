@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/util/styles.dart';
 import 'similar_books_list_view.dart';
@@ -17,12 +18,12 @@ class SimilarBooksSection extends StatelessWidget {
             style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
           ),
         ),
-        const SizedBox(
-          height: 16,
+         SizedBox(
+          height: 14.h,
         ),
         const SimilarBooksListView(),
-        const SizedBox(
-          height: 10,
+         SizedBox(
+          height: 14.h,
         ),
       ],
     );

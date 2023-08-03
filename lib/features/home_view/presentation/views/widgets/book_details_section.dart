@@ -22,16 +22,16 @@ class BookDetailsSection extends StatelessWidget {
             bookData: bookData,
           ),
         ),
-        const SizedBox(
-          height: 23,
+         SizedBox(
+          height: 23.h,
         ),
         Text(
           bookData.volumeInfo.title!,
           style: Styles.textStyle30,
           textAlign: TextAlign.center,
         ),
-        const SizedBox(
-          height: 6,
+         SizedBox(
+          height: 6.h,
         ),
         Text(
           bookData.volumeInfo.authors!.join(' / '),
@@ -42,16 +42,16 @@ class BookDetailsSection extends StatelessWidget {
             fontStyle: FontStyle.italic,
           ),
         ),
-        const SizedBox(
-          height: 18,
-        ),
+        //  SizedBox(
+        //   height: 10.h,
+        // ),
         // const BookRating(
         //   mainAxisAlignment: MainAxisAlignment.center,
         //   averageRating: 0,
         //   ratingCount: 0,
         // ),
-        const SizedBox(
-          height: 37,
+         SizedBox(
+          height: 37.h,
         ),
          BoxAction(bookData:bookData ),
       ],

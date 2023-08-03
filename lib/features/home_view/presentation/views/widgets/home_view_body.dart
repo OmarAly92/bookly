@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'best_seller_sliver_list.dart';
 import 'best_seller_title.dart';
@@ -10,25 +11,25 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return  SafeArea(
       child: CustomScrollView(
         shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         slivers: [
           SliverToBoxAdapter(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                child: CustomAppBar(),
+                  padding: EdgeInsets.symmetric(horizontal: 18.w),
+                child: const CustomAppBar(),
                 ),
-                FeaturedBooksListView(),
-                BestSellerTitle(),
+                const FeaturedBooksListView(),
+                const BestSellerTitle(),
                ],
             ),
           ),
-          NewestBooksSliverList(),
+          const NewestBooksSliverList(),
         ],
       ),
     );

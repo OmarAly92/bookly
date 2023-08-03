@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/util/styles.dart';
 
@@ -18,7 +19,7 @@ class BestSellerTitle extends StatelessWidget {
             style: Styles.textStyle18,
           ),
         ),
-        const SizedBox(height: 22),
+         SizedBox(height: 18.h),
       ],
     );
   }
