@@ -11,7 +11,7 @@ Bookly is a feature-rich mobile application designed to revolutionize the way us
 
 ## Image of the project:
 
-### Home screen, Book detail screen & Search screen
+### Home screen, Book detail screen 
 
 
 <div>
@@ -19,6 +19,6 @@ Bookly is a feature-rich mobile application designed to revolutionize the way us
 <img src="https://github.com/OmarAly92/bookly/assets/114154073/9b151924-4eee-4b53-8c09-866c6c036a5f" alt="bookly2"  width="500" >
 </div>
 
-<p align="center">
+### Search screen
 <img  src="https://github.com/OmarAly92/bookly/assets/114154073/7e599203-dbe9-4c5e-9171-2ef68b71ddfb" alt="bookly3"  width="500"  >
-</p>
+
